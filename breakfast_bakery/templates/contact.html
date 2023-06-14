@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>晨光食驗室 - 聯絡我們</title>
+  <style>
+    /* 全局樣式 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 頁面頂部 */
+    header {
+      background-color: #f2f2f2;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* 主要內容區域 */
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    /* 頁腳 */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* 圖片樣式 */
+    .featured-image {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- 頁面頂部 -->
+  <header>
+    <h1>晨光食驗室</h1>
+    <nav>
+      <ul>
+        <li><a href="http://127.0.0.1:8000/news/">最新消息</a></li>
+        <li><a href="http://127.0.0.1:8000/about/">關於我們</a></li>
+        <li><a href="http://127.0.0.1:8000/order/">訂餐</a></li>
+        <li><a href="http://127.0.0.1:8000/contact/">聯繫我們</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+    <title>聯繫我們 - 回饋表單</title>
+    <style>
+      /* CSS 樣式 */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+  
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+  
+      h1 {
+        margin-top: 0;
+      }
+  
+      .form-group {
+        margin-bottom: 20px;
+      }
+  
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+  
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+  
+      textarea {
+        height: 100px;
+      }
+  
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+    <body>
+      <div class="container">
+        <h2>聯繫我們 - 回饋表單</h2>
+        <form method="post" action="{% url 'contact_submit' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">電子郵件：</label>
+            <input type="text" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">訊息：</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="提交">
+          </div>
+        </form>
+      </div>
+    </body>
+  </head>
+  <footer>
+    <p>&copy; 2023 晨光食驗室. All rights reserved.</p>
+  </footer>
+  
+  </body>
+  </html>

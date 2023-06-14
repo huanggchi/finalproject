@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>晨光食驗室 - 訂購早餐</title>
+  <style>
+    /* 全局樣式 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 頁面頂部 */
+    header {
+      background-color: #f2f2f2;
+      padding: 20px;
+      text-align:center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* 主要內容區域 */
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    /* 頁腳 */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* 圖片樣式 */
+    .featured-image {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- 頁面頂部 -->
+  <header>
+    <h1>晨光食驗室</h1>
+    <nav>
+      <ul>
+        <li><a href="http://127.0.0.1:8000/news/">最新消息</a></li>
+        <li><a href="http://127.0.0.1:8000/about/">關於我們</a></li>
+        <li><a href="http://127.0.0.1:8000/order/">訂餐</a></li>
+        <li><a href="http://127.0.0.1:8000/contact/">聯繫我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+</body>
+<body>
+  <h1>晨光食驗室 - 訂購早餐</h1>
+  
+  <h2>菜單</h2>
+  <ul>
+    {% for item in menu_items %}
+      <li>
+        {{ item.name }} ------------------ {{ item.price }} 元
+        <form action="{% url 'add_to_cart' item.id %}" method="POST">
+          {% csrf_token %}
+          <input type="submit" value="加入購物車">
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h2>購物車</h2>
+  <ul>
+    {% for item in cart_items %}
+      <li>
+        {{ item.name }} - {{ item.price }} 元
+        <form action="{% url 'remove_from_cart' item.id %}" method="POST">
+          {% csrf_token %}
+          <input type="submit" value="從購物車中移除">
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h2>結算</h2>
+  <p>總金額：{{ total_price }} 元</p>
+
+  <form action="{% url 'checkout' %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="結帳">
+  </form>
+  <footer>
+    <p>&copy; 2023 晨光食驗室. All rights reserved.</p>
+  </footer>
+</body>
+</html>

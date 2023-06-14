@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>晨光食驗室</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			background-color: #f2f2f2;
+			padding: 20px;
+			text-align: center;
+		}
+		nav {
+			background-color: #ccc;
+			padding: 10px;
+			text-align: center;
+		}
+		nav a {
+			color: #333;
+			text-decoration: none;
+			padding: 10px;
+		}
+		nav a:hover {
+			background-color: #2e2204;
+			color: #fff;
+		}
+		
+		section {
+			padding: 20px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			background-color: #fff;
+			color: #333;
+			min-height: 500px;
+		}
+		section h2 {
+			text-align: center;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		.card {
+			background-color: #eee;
+			box-shadow: 0px 0px 5px #ccc;
+			margin: 20px;
+			width: 300px;
+			height: 400px;
+			overflow: hidden;
+			border-radius: 5px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+		.card img {
+			width: 100%;
+			height: 250px;
+			object-fit: cover;
+		}
+		.card h3 {
+			margin: 10px 0;
+			font-size: 18px;
+			font-weight: bold;
+			text-align: center;
+		}
+		.card p {
+			margin: 10px 0;
+			font-size: 16px;
+			line-height: 1.5;
+			text-align: justify;
+			padding: 10px;
+			flex-grow: 1;
+			box-sizing: border-box;
+			overflow: auto;
+		}
+		.card button {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-bottom: 10px;
+		}
+		.card button:hover {
+			background-color: #fff;
+			color: #333;
+		}
+		footer {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+	</style>
+</head>
+
+
+
+
+<body>
+  <!-- 頁面頂部 -->
+  <header>
+	<h1>晨光食驗室</h1>
+	<nav>
+	<ul>
+		<li><a href="http://127.0.0.1:8000/news/">最新消息</a></li>
+		<li><a href="http://127.0.0.1:8000/about/">關於我們</a></li>
+		<li><a href="http://127.0.0.1:8000/order/">訂餐</a></li>
+		<li><a href="http://127.0.0.1:8000/contact/">聯繫我們</a></li>
+	</ul>
+	</nav>
+</header>
+  <section id="home">
+  <div class="card">
+    <img src="https://via.placeholder.com/300x250.png?text=Coffee1" alt="coffee1">
+    <h3>咖啡一</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+    <button>加入購物車</button>
+  </div>
+  <div class="card">
+    <img src="https://via.placeholder.com/300x250.png?text=Coffee2" alt="coffee2">
+    <h3>咖啡二</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+    <button>加入購物車</button>
+  </div>
+  <div class="card">
+    <img src="https://via.placeholder.com/300x250.png?text=Coffee3" alt="coffee3">
+    <h3>咖啡三</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+    <button>加入購物車</button>
+  </div>
+</section>
+<section id="menu">
+  <h2>菜單</h2>
+  <div class="card">
+    <img src="https://via.placeholder.com/300x250.png?text=Menu1" alt="menu1">
+    <h3>鬆餅</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+    <button>加入購物車</button>
+  </div>
+  <div class="card">
+    <img src="https://via.placeholder.com/300x250.png?text=Menu2" alt="menu2">
+    <h3>三明治</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+    <button>加入購物車</button>
+  </div>
+  <div class="card">
+    <img src="https://via.placeholder.com/300x250.png?text=Menu3" alt="menu3">
+    <h3>沙拉</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+    <button>加入購物車</button>
+  </div>
+</section>
+<section id="about">
+  <h2>關於我們</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+		<div class="card">
+			<img src="https://via.placeholder.com/300x250.png?text=Coffee1" alt="coffee1">
+			<h3>咖啡一</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+			<button>加入購物車</button>
+		</div>
+		<div class="card">
+			<img src="https://via.placeholder.com/300x250.png?text=Coffee2" alt="coffee2">
+			<h3>咖啡二</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+			<button>加入購物車</button>
+		</div>
+		<div class="card">
+			<img src="https://via.placeholder.com/300x250.png?text=Coffee3" alt="coffee3">
+			<h3>咖啡三</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+			<button>加入購物車</button>
+		</div>
+	</section>
+	<section id="menu">
+		<h2>菜單</h2>
+		<div class="card">
+			<img src="https://via.placeholder.com/300x250.png?text=Menu1" alt="menu1">
+			<h3>鬆餅</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+			<button>加入購物車</button>
+		</div>
+		<div class="card">
+			<img src="https://via.placeholder.com/300x250.png?text=Menu2" alt="menu2">
+			<h3>三明治</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+			<button>加入購物車</button>
+		</div>
+		<div class="card">
+			<img src="https://via.placeholder.com/300x250.png?text=Menu3" alt="menu3">
+			<h3>沙拉</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+			<button>加入購物車</button>
+		</div>
+	</section>
+	<section id="about">
+		<h2>關於我們</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+  <!-- 頁腳 -->
+  <footer>
+    <p>&copy; 2023 晨光食驗室. All rights reserved.</p>
+  </footer>
+</body>
+</html>

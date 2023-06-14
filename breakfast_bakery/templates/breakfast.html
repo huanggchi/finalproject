@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>晨光食驗室</title>
+  <!-- 引入 Bootstrap 的 CSS 樣式表 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+	<!-- 引入 jQuery 和 Popper.js -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+	<!-- 引入 Bootstrap 的 JavaScript 程式庫 -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0px;
+    }
+    header {
+      background-color: #f2f2f2;
+      padding: 20px;
+      text-align:center;
+    }
+
+    h1 {
+      margin: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav ul li {
+      list-style-type: none;
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+    section {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      color: #333;
+      min-height: 0px;
+    }
+
+    section h2 {
+      text-align: center;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background-color: #d1aa67;
+      box-shadow: 0px 0px 5px #ccc;
+      margin: 20px;
+      width: 300px;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .card p {
+      margin: 10px 0;
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: justify;
+      padding: 10px;
+      flex-grow: 1;
+      box-sizing: border-box;
+      overflow: auto;
+    }
+
+    .card button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .card button:hover {
+      background-color: #fff;
+      color: #333;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+ <!-- 頁面頂部 -->
+ <header>
+    <h1>晨光食驗室</h1>
+    <nav>
+      <ul>
+        <li><a href="http://127.0.0.1:8000/news/">最新消息</a></li>
+        <li><a href="http://127.0.0.1:8000/about/">關於我們</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="http://127.0.0.1:8000/product/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            餐點介紹
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="http://127.0.0.1:8000/product/">熱門商品</a>
+            <a class="dropdown-item" href="http://127.0.0.1:8000/breakfast/">早餐</a>
+            <a class="dropdown-item" href="http://127.0.0.1:8000/dessert/">甜點</a>
+          </div>
+        </li>
+        <li><a href="http://127.0.0.1:8000/contact/">聯繫我們</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 首頁部分 -->
+  	<section id="home">
+      {% for product in products %}
+        <div class="card">
+          <img src="{{ product.image }}" alt="{{ product.title }}">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.description }}</p>
+          <p>價格: ${{ product.price }}</p>
+          <button onclick="addToCart('{{ product.id }}')">加入購物車</button>
+        </div>
+      {% endfor %}
+    </section>
+    <script>
+      // 購物車功能
+      function addToCart(productId) {
+        let cartItems = JSON.parse(localStorage.getItem('cart_items')) || [];
+        cartItems.push(productId);
+        localStorage.setItem('cart_items', JSON.stringify(cartItems));
+        alert('已加入購物車！');
+      }
+    </script>
+  </section>
+
+  <!-- 菜單部分 -->
+  <section id="menu">
+    <h1>早餐介紹</h1>
+    <br>
+    <h2>漢堡</h2>
+    <div class="card">
+      <img src="C:\Users\huang\OneDrive\桌面\GitHub\finalproj\breakfast_bakery\images\beef.jpg" alt="beef">
+      <h3>牛肉起士堡</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+      <button onclick="addToCart(1)">加入購物車</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x250.png?text=Menu2" alt="menu2">
+      <h3>三明治</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+      <button onclick="addToCart(2)">加入購物車</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x250.png?text=Menu3" alt="menu3">
+      <h3>沙拉</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+      <button onclick="addToCart(3)">加入購物車</button>
+    </div>
+  </section>
+
+  <!-- 關於我們部分 -->
+  <section id="about">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x250.png?text=Coffee1" alt="coffee1">
+      <h3>咖啡一</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+      <button onclick="addToCart(4)">加入購物車</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x250.png?text=Coffee2" alt="coffee2">
+      <h3>咖啡二</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+      <button onclick="addToCart(5)">加入購物車</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x250.png?text=Coffee3" alt="coffee3">
+      <h3>咖啡三</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>
+      <button onclick="addToCart(6)">加入購物車</button>
+    </div>
+  </section>
+
+  <!-- 頁腳 -->
+  <footer>
+    <p>&copy; 2023 晨光食驗室. All rights reserved.</p>
+  </footer>
+</body>
+</html>

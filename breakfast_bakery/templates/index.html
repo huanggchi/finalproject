@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>晨光實驗室 - 首頁</title>
+  <style>
+    /* 全局樣式 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 頁面頂部 */
+    header {
+      background-color: #f2f2f2;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* 主要內容區域 */
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    /* 頁腳 */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* 圖片樣式 */
+    .featured-image {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+    <body>
+    <!-- 頁面頂部 -->
+    <header>
+        <h1>晨光食驗室</h1>
+        <br>
+        <nav>
+        <ul>
+            <li><a href="http://127.0.0.1:8000/news/">最新消息</a></li>
+            <li><a href="http://127.0.0.1:8000/about/">關於我們</a></li>
+            <li><a href="http://127.0.0.1:8000/order/">訂餐</a></li>
+            <li><a href="http://127.0.0.1:8000/contact/">聯繫我們</a></li>
+        </ul>
+        </nav>
+    </header>
+</head>
+<body>
+
+  <div class="content">
+    <h2>歡迎來到晨光實驗室</h2>
+    <p>我們提供新鮮、健康且美味的早餐選擇。</p>
+    <p>請瀏覽我們的菜單並在線訂購您的早餐。</p>
+    <a href="{% url 'order' %}">訂購早餐</a>
+  </div>
+  <br>
+  <footer>
+    <p>&copy; 2023 晨光食驗室. All rights reserved.</p>
+  </footer>
+</body>
+</html>
